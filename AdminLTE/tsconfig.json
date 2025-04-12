@@ -1,0 +1,49 @@
+{
+  "root": true,
+  "compilerOptions": {
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "module": "esnext",
+    "alwaysStrict": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "paths": {
+      "@components/*": [
+        "src/html/components/*"
+      ],
+      "@dist/*": [
+        "dist/assets/img"
+      ],
+      "@maindist/*": [
+        "dist"
+      ]
+    },
+    /* Language and Environment */
+    "target": "es6",
+    "lib": [
+      "es2018",
+      "DOM"
+    ],
+    "types": [
+      "react",
+      "react-dom"
+    ]
+  },
+  "include": [
+    "src/ts/**/*",
+    "src/html/**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
+}

@@ -1,0 +1,103 @@
+---
+import Head from '@components/_head.astro'
+import Footer from '@components/dashboard/_footer.astro'
+import Topbar from '@components/dashboard/_topbar.astro'
+import Sidenav from '@components/dashboard/_sidenav.astro'
+import Scripts from '@components/_scripts.astro'
+
+import LoginInstructionsForm from '@components/react/dashboard/LoginInstructionsForm'
+
+const title = 'Login App | LoginInstructions'
+const path = '../../dist'
+const mainPage = 'userManagement'
+const page = 'loginInstructions'
+---
+
+<!doctype html>
+<html lang='en'>
+  <!--begin::Head-->
+  <head>
+    <Head title={title} path={path} />
+  </head>
+  <!--end::Head-->
+  <!--begin::Body-->
+  <body class='layout-fixed sidebar-expand-lg sidebar-mini bg-body-tertiary'>
+    <!--begin::App Wrapper-->
+    <div class='app-wrapper'>
+      <Topbar path={path} />
+      <Sidenav path={path} mainPage={mainPage} page={page} />
+      <!--begin::App Main-->
+      <main class='app-main'>
+        <!--begin::App Content Header-->
+        <div class='app-content-header'>
+          <!--begin::Container-->
+          <div class='container-fluid'>
+            <!--begin::Row-->
+            <div class='row'>
+              <div class='col-sm-6'>
+                <h3 class='mb-0'>Send Login Instructions</h3>
+              </div>
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content Header-->
+        <!--begin::App Content-->
+        <div class='app-content'>
+          <!--begin::Container-->
+          <div class='container-fluid'>
+            <!--begin::Row-->
+            <div class='row'>
+              <div class='col-12'>
+                <!-- Default box -->
+                <div class='card'>
+                  <div class='card-header'>
+                    <h3 class='card-title'>
+                      Use this functionality to reset your password with an OTP
+                      sent to your email.
+                    </h3>
+                    <div class='card-tools'>
+                      <button
+                        type='button'
+                        class='btn btn-tool'
+                        data-lte-toggle='card-collapse'
+                        title='Collapse'
+                      >
+                        <i data-lte-icon='expand' class='bi bi-plus-lg'></i>
+                        <i data-lte-icon='collapse' class='bi bi-dash-lg'></i>
+                      </button>
+                      <button
+                        type='button'
+                        class='btn btn-tool'
+                        data-lte-toggle='card-remove'
+                        title='Remove'
+                      >
+                        <i class='bi bi-x-lg'></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class='card-body'>
+                    <LoginInstructionsForm client:only='react' />
+                  </div>
+                  <!-- /.card-body -->
+                  <!-- /.card-footer-->
+                </div>
+                <!-- /.card -->
+              </div>
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content-->
+      </main>
+      <!--end::App Main-->
+      <Footer />
+    </div>
+    <!--end::App Wrapper-->
+    <!--begin::Script-->
+    <Scripts path={path} />
+    <!--end::Script-->
+  </body><!--end::Body-->
+</html>
